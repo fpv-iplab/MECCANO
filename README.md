@@ -31,19 +31,17 @@ To use the MECCANO Dataset in Detectron2 to perform Object Detection and Recogni
     pip install -e detectron2_repo
     # You can find more details at https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md
     ```
-
-* Download the PySlowFast_files folder from this repository;
-* Place the files "__init__.py", "meccano.py" and "sampling.py" in your slowfast/datasets/ folder.
+* Register the MECCANO Dataset adding the following instructions in detectron2_repo/tools/run_net.py:
+    ```
+    register_coco_instances("Meccano_objects_train", {}, "/path_to_your_folder/instances_meccano_train.json", "/path_to_the_MECCANO_active_object_annotations_frames/")
+    register_coco_instances("Meccano_objects_val", {}, "/path_to_your_folder/instances_meccano_val.json", "/path_to_the_MECCANO_active_object_annotations_frames/")
+    register_coco_instances("Meccano_objects_test", {}, "/path_to_your_folder/instances_meccano_test.json","/path_to_the_MECCANO_active_object_annotations_frames/")
+    ```
 
 Now, run the training/test with:
 ```
-python tools/run_net.py --cfg path_to_your_config_file --[optional flags]
+python tools/run_net.py --config-file path_to_your_config_file --[optional flags]
 ```
-
-register_coco_instances("Meccano_objects_train", {}, "/path_to_your_folder/instances_meccano_train.json", "/path_to_the_MECCANO_active_object_annotations_frames/")
-register_coco_instances("Meccano_objects_val", {}, "/path_to_your_folder/instances_meccano_val.json", "/path_to_the_MECCANO_active_object_annotations_frames/")
-register_coco_instances("Meccano_objects_test", {}, "/path_to_your_folder/instances_meccano_test.json","/path_to_the_MECCANO_active_object_annotations_frames/")
-
 
 ## Model Zoo and Baselines
 
