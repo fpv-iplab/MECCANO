@@ -31,7 +31,7 @@ To use the MECCANO Dataset in Detectron2 to perform Object Detection and Recogni
     pip install -e detectron2_repo
     # You can find more details at https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md
     ```
-* Register the MECCANO Dataset adding the following instructions in detectron2_repo/tools/run_net.py:
+* Register the MECCANO Dataset adding the following instructions in detectron2_repo/tools/run_net.py, in the main() function:
     ```
     register_coco_instances("Meccano_objects_train", {}, "/path_to_your_folder/instances_meccano_train.json", "/path_to_the_MECCANO_active_object_annotations_frames/")
     register_coco_instances("Meccano_objects_val", {}, "/path_to_your_folder/instances_meccano_val.json", "/path_to_the_MECCANO_active_object_annotations_frames/")
