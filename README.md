@@ -21,17 +21,23 @@ python tools/run_net.py --cfg path_to_your_config_file --[optional flags]
 ```
 
 
-## PySlowFast Model Zoo and Baselines
+## Model Zoo and Baselines
 
-### MECCANO
+### PySlowFast models
 
-We provided pretrained models on the MECCANO Dataset:
+We provided pretrained models on the MECCANO Dataset for the action recognition task:
 | architecture | depth |  model  | config |
 | ------------- | -------------| ------------- | ------------- |
 | C2D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D_8x8_R50.yaml |
 | I3D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/I3D_8x8_R50.yaml |
 | SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/SLOWFAST_8x8_R50.yaml |
 
+### Detectron2 models
+
+We provided pretrained models on the MECCANO Dataset for the active object recognition task:
+| architecture | depth |  model  | config |
+| ------------- | -------------| ------------- | ------------- |
+| Faster RCNN | R101_FPN | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/active_object_recognition/meccano_active_objects.yaml |
 
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
