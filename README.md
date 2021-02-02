@@ -1,4 +1,4 @@
-# The MECCANO Dataset: Understanding Human-Object Interactions from Egocentric Videos in an Industrial-like Domain
+# The MECCANO Dataset
 
 This is the official github repository related to the MECCANO Dataset.
 
