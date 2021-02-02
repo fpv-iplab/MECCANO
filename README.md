@@ -2,7 +2,9 @@
 
 This is the related official github repo associated to the MECCANO Dataset.
 
-![alt text]https://github.com/francescoragusa/MECCANO/blob/master/images/MECCANO.png?raw=true)
+<div align="center">
+  <img src="images/MECCANO.png" width="600px"/>
+</div>
 
 The MECCANO Dataset is the first dataset of egocentric videos to study human-object interactions in industrial-like settings. You can download the MECCANO dataset from the [project web page](https://iplab.dmi.unict.it/MECCANO/).
 
