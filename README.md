@@ -8,7 +8,7 @@ This is the official github repository related to the MECCANO Dataset.
 
 The MECCANO Dataset is the first dataset of egocentric videos to study human-object interactions in industrial-like settings. You can download the MECCANO dataset from the [project web page](https://iplab.dmi.unict.it/MECCANO/).
 
-#### Use the MECCANO Dataset with PySlowFast
+## Use the MECCANO Dataset with PySlowFast
 To use the MECCANO Dataset in PySlowfast please follow the instructions below:
 
 * Install PySlowFast following the [official instructions](https://github.com/facebookresearch/SlowFast/blob/master/INSTALL.md);
@@ -19,7 +19,7 @@ Now, run the training/test with:
 ```
 python tools/run_net.py --cfg path_to_your_config_file --[optional flags]
 ```
-#### Citing the MECCANO Dataset
+## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
 ```BibTeX
 @inproceedings{ragusa2020meccano,
