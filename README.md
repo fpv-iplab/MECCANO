@@ -19,6 +19,18 @@ Now, run the training/test with:
 ```
 python tools/run_net.py --cfg path_to_your_config_file --[optional flags]
 ```
+
+
+# PySlowFast Model Zoo and Baselines
+
+## MECCANO
+
+We provided pretrained models on the MECCANO Dataset:
+| architecture | depth |  model  | config |
+| ------------- | -------------| ------------- | ------------- |
+| C2D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D.yaml |
+
+
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
 ```BibTeX
