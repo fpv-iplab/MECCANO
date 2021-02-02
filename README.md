@@ -48,8 +48,5 @@ If you find the MECCANO Dataset useful in your research, please use the followin
   year = { 2021 },
   eprint = {  2010.05654  },
   booktitle = { IEEE Winter Conference on Application of Computer Vision (WACV) },
-  primaryclass = {  cs.CV  },
-  url = {  https://iplab.dmi.unict.it/MECCANO  },
-  pdf = {  https://arxiv.org/pdf/2010.05654.pdf  },
 }
 ```
