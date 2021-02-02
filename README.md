@@ -29,6 +29,8 @@ We provided pretrained models on the MECCANO Dataset:
 | architecture | depth |  model  | config |
 | ------------- | -------------| ------------- | ------------- |
 | C2D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D.yaml |
+| I3D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/I3D.yaml |
+| SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/SlowFast.yaml |
 
 
 ## Citing the MECCANO Dataset
