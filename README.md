@@ -21,9 +21,9 @@ python tools/run_net.py --cfg path_to_your_config_file --[optional flags]
 ```
 
 
-# PySlowFast Model Zoo and Baselines
+## PySlowFast Model Zoo and Baselines
 
-## MECCANO
+### MECCANO
 
 We provided pretrained models on the MECCANO Dataset:
 | architecture | depth |  model  | config |
