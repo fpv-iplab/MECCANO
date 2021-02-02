@@ -6,8 +6,9 @@ The MECCANO Dataset is the first dataset of egocentric videos to study human-obj
 #### Use the MECCANO Dataset with PySlowFast
 To use the MECCANO Dataset in PySlowfast please follow the instructions below:
 
-* Install PySlowFast following the [official instructions](https://github.com/facebookresearch/SlowFast/blob/master/INSTALL.md)
-* Place the files "__init__.py", "meccano.py" and "sampling.py" in slowfast/datasets/ folder
+* Install PySlowFast following the [official instructions](https://github.com/facebookresearch/SlowFast/blob/master/INSTALL.md);
+* Download the PySlowFast_files folder from this repository;
+* Place the files "__init__.py", "meccano.py" and "sampling.py" in your slowfast/datasets/ folder.
 
 Now, run the training/test with:
 ```
