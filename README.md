@@ -37,7 +37,7 @@ We provided pretrained models on the MECCANO Dataset for the action recognition 
 We provided pretrained models on the MECCANO Dataset for the active object recognition task:
 | architecture | depth |  model  | config |
 | ------------- | -------------| ------------- | ------------- |
-| Faster RCNN | R101_FPN | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/active_object_recognition/meccano_active_objects.yaml |
+| Faster RCNN | R101_FPN | [`link`](https://iplab.dmi.unict.it/MECCANO/models/model_meccano_active_objects.pth) | configs/active_object_recognition/meccano_active_objects.yaml |
 
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
