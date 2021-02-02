@@ -28,9 +28,9 @@ python tools/run_net.py --cfg path_to_your_config_file --[optional flags]
 We provided pretrained models on the MECCANO Dataset:
 | architecture | depth |  model  | config |
 | ------------- | -------------| ------------- | ------------- |
-| C2D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D.yaml |
-| I3D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/I3D.yaml |
-| SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/SlowFast.yaml |
+| C2D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D_8x8_R50.yaml |
+| I3D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/I3D_8x8_R50.yaml |
+| SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/SLOWFAST_8x8_R50.yaml |
 
 
 ## Citing the MECCANO Dataset
