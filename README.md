@@ -43,10 +43,10 @@ We provided pretrained models on the MECCANO Dataset for the active object recog
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
 ```BibTeX
 @inproceedings{ragusa2020meccano,
-  title = { The MECCANO Dataset: Understanding Human-Object Interactions from Egocentric Videos in an Industrial-like Domain },
-  author = { Francesco Ragusa and Antonino Furnari and Salvatore Livatino and Giovanni Maria Farinella },
-  year = { 2021 },
-  eprint = {  2010.05654  },
-  booktitle = { IEEE Winter Conference on Application of Computer Vision (WACV) },
+  title = {The MECCANO Dataset: Understanding Human-Object Interactions from Egocentric Videos in an Industrial-like Domain},
+  author = {Francesco Ragusa and Antonino Furnari and Salvatore Livatino and Giovanni Maria Farinella },
+  year = {2021},
+  eprint = {2010.05654},
+  booktitle = {IEEE Winter Conference on Application of Computer Vision (WACV)}
 }
 ```
