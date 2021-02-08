@@ -52,7 +52,7 @@ We provided pretrained models on the MECCANO Dataset for the action recognition 
 | ------------- | -------------| ------------- | ------------- |
 | C2D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D_8x8_R50.yaml |
 | I3D | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/I3D_8x8_R50.yaml |
-| SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/SLOWFAST_8x8_R50.yaml |
+| SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/models/SLOWFAST_8x8_R50_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50.yaml |
 
 ### Detectron2 models
 
