@@ -40,7 +40,7 @@ To use the MECCANO Dataset in Detectron2 to perform Object Detection and Recogni
 
 Now, run the training/test with:
 ```
-python tools/run_net.py --config-file path_to_your_config_file --[optional flags]
+python tools/train_net.py --config-file path_to_your_config_file --[optional flags]
 ```
 
 ## Model Zoo and Baselines
