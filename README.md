@@ -64,6 +64,17 @@ We provided pretrained models on the MECCANO Dataset for the active object recog
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
 ```BibTeX
+@misc{ragusa2022meccano,
+title={MECCANO: A Multimodal Egocentric Dataset for Humans Behavior Understanding in the Industrial-like Domain},
+author={Francesco Ragusa and Antonino Furnari and Giovanni Maria Farinella},
+year={2022},
+eprint={2209.08691},
+archivePrefix={arXiv},
+primaryClass={cs.CV}
+}
+```
+Additionally, cite the original paper:
+```BibTeX
 @inproceedings{ragusa2021meccano,
   title = {The MECCANO Dataset: Understanding Human-Object Interactions from Egocentric Videos in an Industrial-like Domain},
   author = {Francesco Ragusa and Antonino Furnari and Salvatore Livatino and Giovanni Maria Farinella},
