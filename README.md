@@ -13,7 +13,8 @@ To use the MECCANO Dataset in PySlowfast please follow the instructions below:
 
 * Install PySlowFast following the [official instructions](https://github.com/facebookresearch/SlowFast/blob/master/INSTALL.md);
 * Download the PySlowFast_files folder from this repository;
-* Place the files "__init__.py", "meccano.py" and "sampling.py" in your slowfast/datasets/ folder.
+* Place the files "__init__.py", "meccano.py" and "sampling.py" in your slowfast/datasets/ folder;
+* Place the files "__init__.py", "custom_video_model_builder_MECCANO_gaze.py" in your slowfast/models/ folder.
 
 Now, run the training/test with:
 ```
@@ -45,14 +46,22 @@ python tools/train_net.py --config-file path_to_your_config_file --[optional fla
 
 ## Model Zoo and Baselines
 
-### PySlowFast models
+### Action Recognition
 
-We provided pretrained models on the MECCANO Dataset for the action recognition task:
+#### PySlowFast models
+
+We provided pretrained models on the MECCANO Dataset for the action recognition task (only for the first version of the dataset):
 | architecture | depth |  model  | config |
 | ------------- | -------------| ------------- | ------------- |
 | C2D | R50 | [`coming soon`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D_8x8_R50.yaml |
 | I3D | R50 | [`coming soon`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/I3D_8x8_R50.yaml |
 | SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/models/SLOWFAST_8x8_R50_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50.yaml |
+
+We provided pretrained models on the MECCANO Multimodal Dataset for the action recognition task:
+| architecture | depth | modality | model  | config |
+| ------------- | -------------| ------------- | ------------- |
+| SlowFast | R50 | RGB | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/action_recognition/SLOWFAST_8x8_R50_RGB_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50_MECCANO.yaml |
+| SlowFast | R50 | Depth | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/action_recognition/SLOWFAST_8x8_R50_Depth_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50_MECCANO.yaml |
 
 ### Detectron2 models
 
