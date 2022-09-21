@@ -71,6 +71,18 @@ We provided pretrained models on the MECCANO Dataset for the active object recog
 | ------------- | -------------| ------------- | ------------- |
 | Faster RCNN | R101_FPN | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/active_object_recognition/MECCANO_active_objects.pth) | configs/active_object_recognition/meccano_active_objects.yaml |
 
+### 3) Egocentric Human-Object Interaction (EHOI) Detection
+
+For the active objects detection involved in the interaction, you have to use the model provided for the 2) task.
+
+#### PySlowFast models (verb prediction)
+
+We provided pretrained models on the MECCANO Multimodal Dataset for the verb prediction of the EHOI detection task:
+| architecture | depth | modality | model  | config |
+| ------------- | ------------- | -------------| ------------- | ------------- |
+| SlowFast | R50 | RGB | [`link`](coming soon) | coming soon |
+| SlowFast | R50 | Depth | [`link`](coming soon) | coming soon |
+
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
 ```BibTeX
