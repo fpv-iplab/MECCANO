@@ -59,7 +59,7 @@ We provided pretrained models on the MECCANO Dataset for the action recognition 
 
 We provided pretrained models on the MECCANO Multimodal Dataset for the action recognition task:
 | architecture | depth | modality | model  | config |
-| ------------- | -------------| ------------- | ------------- |
+| ------------- | ------------- | -------------| ------------- | ------------- |
 | SlowFast | R50 | RGB | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/action_recognition/SLOWFAST_8x8_R50_RGB_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50_MECCANO.yaml |
 | SlowFast | R50 | Depth | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/action_recognition/SLOWFAST_8x8_R50_Depth_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50_MECCANO.yaml |
 
