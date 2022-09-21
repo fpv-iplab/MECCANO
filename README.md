@@ -80,8 +80,8 @@ For the active objects detection involved in the interaction, you have to use th
 We provided pretrained models on the MECCANO Multimodal Dataset for the verb prediction of the EHOI detection task:
 | architecture | depth | modality | model  | config |
 | ------------- | ------------- | -------------| ------------- | ------------- |
-| SlowFast | R50 | RGB | [`link`](coming soon) | coming soon |
-| SlowFast | R50 | Depth | [`link`](coming soon) | coming soon |
+| SlowFast | R50 | RGB | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/ehoi_detection/SLOWFAST_8x8_R50_RGB_MECCANO_verbs.pyth) | configs/ehoi_detection/SLOWFAST_8x8_R50_MECCANO_ehoi.yaml |
+| SlowFast | R50 | Depth | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/ehoi_detection/SLOWFAST_8x8_R50_Depth_MECCANO_verbs.pyth) | configs/ehoi_detection/SLOWFAST_8x8_R50_MECCANO_ehoi.yaml |
 
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
