@@ -46,7 +46,7 @@ python tools/train_net.py --config-file path_to_your_config_file --[optional fla
 
 ## Model Zoo and Baselines
 
-### Action Recognition
+### 1) Action Recognition
 
 #### PySlowFast models
 
@@ -63,12 +63,13 @@ We provided pretrained models on the MECCANO Multimodal Dataset for the action r
 | SlowFast | R50 | RGB | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/action_recognition/SLOWFAST_8x8_R50_RGB_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50_MECCANO.yaml |
 | SlowFast | R50 | Depth | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/action_recognition/SLOWFAST_8x8_R50_Depth_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50_MECCANO.yaml |
 
-### Detectron2 models
+### 2) Active Object Detection and Recognition
+#### Detectron2 models
 
 We provided pretrained models on the MECCANO Dataset for the active object recognition task:
 | architecture | depth |  model  | config |
 | ------------- | -------------| ------------- | ------------- |
-| Faster RCNN | R101_FPN | [`link`](https://iplab.dmi.unict.it/MECCANO/models/model_meccano_active_objects.pth) | configs/active_object_recognition/meccano_active_objects.yaml |
+| Faster RCNN | R101_FPN | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/active_object_recognition/MECCANO_active_objects.pth) | configs/active_object_recognition/meccano_active_objects.yaml |
 
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
