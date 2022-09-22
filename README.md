@@ -102,6 +102,14 @@ We provided the best model trained on MECCANO Multimodal Dataset which uses thre
 | ------------- | ------------- | -------------| 
 | RULSTM | Obj, Gaze, Hands | [`coming soon`]() |
 
+### 5) Next-Active Objects (NAOs) Prediction
+#### Detectron2 models
+
+We provided pretrained models on the MECCANO Dataset for the next-active object prediction task:
+| architecture | depth | train_data| model  | config |
+| ------------- | -------------| ------------- |------------- | ------------- |
+| Faster RCNN | R101_FPN | active+next-active | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/next_active_object/MECCANO_next_active_objects.pth) | configs/next-active_object/meccano_next_active_objects.yaml |
+
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
 ```BibTeX
