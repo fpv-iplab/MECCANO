@@ -83,6 +83,24 @@ We provided pretrained models on the MECCANO Multimodal Dataset for the verb pre
 | SlowFast | R50 | RGB | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/ehoi_detection/SLOWFAST_8x8_R50_RGB_MECCANO_verbs.pyth) | configs/ehoi_detection/SLOWFAST_8x8_R50_MECCANO_ehoi.yaml |
 | SlowFast | R50 | Depth | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/ehoi_detection/SLOWFAST_8x8_R50_Depth_MECCANO_verbs.pyth) | configs/ehoi_detection/SLOWFAST_8x8_R50_MECCANO_ehoi.yaml |
 
+
+### 4) Action Anticipation
+
+## Use the MECCANO Dataset with RULSTM
+To use the MECCANO Dataset with RULSTM please follow the instructions below:
+
+* Download source code of RULSTM following the [official instructions](https://github.com/fpv-iplab/rulstm);
+* Download the RULSTM_files folder from this repository;
+* Place the files "meccano_dataset.py" and "main.py" in your RULSTM main folder;
+* Download the Pre-Extracted features of MECCANO dataset from [here]().
+
+#### RULSTM models
+
+We provided the best model trained on MECCANO Multimodal Dataset which uses three branches: Objects, Gaze and Hands.
+| architecture | modality | model |
+| ------------- | ------------- | -------------| 
+| RULSTM | Obj, Gaze, Hands | [`coming soon`]() |
+
 ## Citing the MECCANO Dataset
 If you find the MECCANO Dataset useful in your research, please use the following BibTeX entry for citation.
 ```BibTeX
