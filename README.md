@@ -99,7 +99,7 @@ We provided pretrained models on the MECCANO Multimodal Dataset for the verb pre
 We provided the best model trained on MECCANO Multimodal Dataset which uses three branches: Objects, Gaze and Hands.
 | architecture | modality | model |
 | ------------- | ------------- | -------------| 
-| RULSTM | Obj, Gaze, Hands | [`coming soon`]() |
+| RULSTM | Obj, Gaze, Hands | [`link`](https://iplab.dmi.unict.it/sharing/MECCANO/models/action_anticipation/MECCANO_RULSTM-anticipation_0.25_6_8_fusion_mt5r_best.pth.tar)|
 
 ### 5) Next-Active Objects (NAOs) Prediction
 #### Detectron2 models
