@@ -50,6 +50,7 @@ To use the MECCANO Dataset with RULSTM please follow the instructions below:
 * Download source code of RULSTM following the [official instructions](https://github.com/fpv-iplab/rulstm);
 * Download the RULSTM_files folder from this repository;
 * Place the files "meccano_dataset.py" and "main.py" in your RULSTM main folder;
+* Download the .csv files with the action annotation of MECCANO dataset from [here] (https://iplab.dmi.unict.it/sharing/MECCANO/MECCANO_action_annotations.zip);
 * Download the Pre-Extracted features of MECCANO dataset from [here]().
 
 ## Model Zoo and Baselines
