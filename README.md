@@ -62,7 +62,6 @@ To use the MECCANO Dataset with RULSTM please follow the instructions below:
 We provided pretrained models on the MECCANO Dataset for the action recognition task (only for the first version of the dataset):
 | architecture | depth |  model  | config |
 | ------------- | -------------| ------------- | ------------- |
-| C2D | R50 | [`coming soon`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/C2D_8x8_R50.yaml |
 | I3D | R50 | [`coming soon`](https://iplab.dmi.unict.it/MECCANO/) | configs/action_recognition/I3D_8x8_R50.yaml |
 | SlowFast | R50 | [`link`](https://iplab.dmi.unict.it/MECCANO/models/SLOWFAST_8x8_R50_MECCANO.pyth) | configs/action_recognition/SLOWFAST_8x8_R50.yaml |
 
