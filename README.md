@@ -14,7 +14,7 @@ To use the MECCANO Dataset in PySlowfast please follow the instructions below:
 * Install PySlowFast following the [official instructions](https://github.com/facebookresearch/SlowFast/blob/master/INSTALL.md);
 * Download the PySlowFast_files folder from this repository;
 * Place the files "__init__.py", "meccano.py" and "sampling.py" in your slowfast/datasets/ folder;
-* Place the files "__init__.py", "custom_video_model_builder_MECCANO_gaze.py" in your slowfast/models/ folder.
+* Place the files "__init__.py", "custom_video_model_builder_MECCANO_gaze.py" in your slowfast/models/ folder (to use the gaze signal).
 
 Now, run the training/test with:
 ```
