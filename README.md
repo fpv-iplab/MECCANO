@@ -44,6 +44,14 @@ Now, run the training/test with:
 python tools/train_net.py --config-file path_to_your_config_file --[optional flags]
 ```
 
+## Use the MECCANO Dataset with RULSTM
+To use the MECCANO Dataset with RULSTM please follow the instructions below:
+
+* Download source code of RULSTM following the [official instructions](https://github.com/fpv-iplab/rulstm);
+* Download the RULSTM_files folder from this repository;
+* Place the files "meccano_dataset.py" and "main.py" in your RULSTM main folder;
+* Download the Pre-Extracted features of MECCANO dataset from [here]().
+
 ## Model Zoo and Baselines
 
 ### 1) Action Recognition
@@ -85,14 +93,6 @@ We provided pretrained models on the MECCANO Multimodal Dataset for the verb pre
 
 
 ### 4) Action Anticipation
-
-## Use the MECCANO Dataset with RULSTM
-To use the MECCANO Dataset with RULSTM please follow the instructions below:
-
-* Download source code of RULSTM following the [official instructions](https://github.com/fpv-iplab/rulstm);
-* Download the RULSTM_files folder from this repository;
-* Place the files "meccano_dataset.py" and "main.py" in your RULSTM main folder;
-* Download the Pre-Extracted features of MECCANO dataset from [here]().
 
 #### RULSTM models
 
