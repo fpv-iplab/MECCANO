@@ -6,6 +6,7 @@ TRAIN:
   CHECKPOINT_PERIOD: 1
   AUTO_RESUME: True
   CHECKPOINT_FILE_PATH: /path_to_the_model/
+  CHECKPOINT_TYPE: pytorch
 DATA:
   PATH_TO_DATA_DIR: /path_to_your_data_dir/
   NUM_FRAMES: 32
