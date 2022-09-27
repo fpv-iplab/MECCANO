@@ -20,17 +20,10 @@ Now, run the training/test with:
 ```
 python tools/run_net.py --cfg path_to_your_config_file --[optional flags]
 ```
-### Extract Features
-To extract features of the MECCANO Dataset using SlowFast Network:
+### Pre-Extracted Features
+We provide pre-extracted features of MECCANO Dataset:
 
-* In the config file replace the MODEL_NAME with SlowFastExtractFeatures;
-* Place the file "custom_video_model_builder_MECCANO_extract_features.py" in your slowfast/models/ folder;
-* Place the file "test_extract_features.py" in your slowfast/tools/ folder;
-
-Now, run the features extraction with:
-```
-python tools/test_extract_features.py --cfg path_to_your_config_file --[optional flags]
-```
+* RGB features extracted with SlowFast: [`coming soon`]
 
 
 ## Use the MECCANO Dataset with Detectron2
