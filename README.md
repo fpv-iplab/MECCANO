@@ -58,6 +58,11 @@ To use the MECCANO Dataset with RULSTM please follow the instructions below:
 * Download the .csv files with the action annotation of MECCANO dataset from [here](https://iplab.dmi.unict.it/sharing/MECCANO/MECCANO_action_annotations.zip);
 * Download the Pre-Extracted features of MECCANO dataset from [here](https://iplab.dmi.unict.it/sharing/MECCANO/RULSTM_MECCANO_features.zip).
 
+Now, run the test with:
+```
+python main.py test ../../test_features/ models/meccano/final_fusion_model.pt --modality fusion --task anticipation --num_class 61 --img_tmpl {:05d}.jpg --meccanomulti
+```
+
 ## Model Zoo and Baselines
 
 ### 1) Action Recognition
