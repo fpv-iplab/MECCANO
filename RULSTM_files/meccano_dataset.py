@@ -69,8 +69,12 @@ class MeccanoSequenceDataset(data.Dataset):
         # read the csv file
         self.annotations = pd.read_csv(path_to_csv, header=None, names=['video','action','name_action', 'start','end'])
 
+       # if challenge:
+       #     self.annotations = pd.read_csv(path_to_csv, header=None, names=['video','start','end'])
+       # else:
+       #     self.annotations = pd.read_csv(path_to_csv, header=None, names=['video','action','name_action', 'start','end'])
+
         
-        self.challenge=challenge
         self.path_to_lmdb = path_to_lmdb
         self.time_step = time_step
         self.past_features = past_features
@@ -109,10 +113,8 @@ class MeccanoSequenceDataset(data.Dataset):
     def __populate_lists(self):
         """ Samples a sequence for each action and populates the lists. """
         for _, a in tqdm(self.annotations.iterrows(), 'Populating Dataset', total = len(self.annotations)):
-
             # sample frames before the beginning of the action
             frames = self.__sample_frames_past(int(a.start[:-4]))
-
             if self.action_samples:
                 # sample frames from the action
                 # to sample n frames, we first sample n+1 frames with linspace, then discard the first one
@@ -124,32 +126,17 @@ class MeccanoSequenceDataset(data.Dataset):
                 self.ids.append(a.name)
                 # handle whether a list of labels is required (e.g., [verb, noun]), rather than a single action
                 if isinstance(self.label_type, list):
-                    if self.challenge: # if sampling for the challenge, there are no labels, just add -1
-                        self.labels.append(-1)
-                    else:
-                        # otherwise get the required labels
                         self.labels.append(a["action"])
                 else: #single label version
-                    if self.challenge:
-                        self.labels.append(-1)
-                    else:
                         self.labels.append(a["action"])
                 if self.action_samples:
                     self.action_frames.append(self.__get_frames(action_frames, a.video))
             else:
                 #if the sequence is invalid, do nothing, but add the id to the discarded_ids list
-               
                 self.discarded_ids.append(a.name)
                 if isinstance(self.label_type, list):
-                    if self.challenge: # if sampling for the challenge, there are no labels, just add -1
-                        self.discarded_labels.append(-1)
-                    else:
-                        # otherwise get the required labels
                         self.discarded_labels.append(a["action"])#.values.astype(int))
                 else: #single label version
-                    if self.challenge:
-                        self.discarded_labels.append(-1)
-                    else:
                         self.discarded_labels.append(a[self.label_type])
 
     def __sample_frames_past(self, point):

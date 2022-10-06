@@ -84,9 +84,6 @@ parser.add_argument('--json_directory', type=str, default = None, help = 'Direct
 
 args = parser.parse_args()
 
-if args.mode == 'test' or args.mode=='validate_json':
-    assert args.json_directory is not None
-
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 if args.task == 'anticipation':
@@ -182,9 +179,8 @@ def get_model():
 
 def load_checkpoint(model, best=False):
     if best:
-        print(join(args.path_to_models, exp_name + '_best.pth.tar'))
-        chk = torch.load("models/meccano/final_fusion_model.pt")
-        #chk = torch.load(join(args.path_to_models, exp_name + '_best.pth.tar'))
+        print((args.path_to_models))
+        chk = torch.load (args.path_to_models)
     else:
         chk = torch.load(join(args.path_to_models, exp_name + '.pth.tar'))
 
@@ -300,7 +296,7 @@ def get_scores(model, loader, challenge=False, include_discarded = False):
         return verb_scores, noun_scores, action_scores, ids
 
 
-def get_meccano_scores(model, loader, challenge=False, include_discarded = False):
+def get_meccano_scores(model, loader):
     model.eval()
     predictions = []
     labels = []
@@ -323,18 +319,10 @@ def get_meccano_scores(model, loader, challenge=False, include_discarded = False
             predictions.append(preds)
             labels.append(y)
 
-    n = 5 #top5
-    for k in range(len(predictions[0])):
-        p = predictions[0][0]
-        time_steps = 8 #2, 1.75, 1.50 ..
-        for i in range(time_steps):
-            print("time_step", i, (-p[i]).argsort()[:n])
-
-
     action_scores = np.concatenate(predictions)
     labels = np.concatenate(labels)
     ids = np.concatenate(ids)
-    print("labels", labels, len(labels))
+
     return action_scores, labels, ids
 
 
@@ -493,16 +481,13 @@ def main():
             epoch, perf, _ = load_checkpoint(model, best=True)
             print(
                 f"Loaded checkpoint for model {type(model)}. Epoch: {epoch}. Perf: {perf:0.2f}.")
-            
             loader = get_loader('validation')
-            print("loader", loader)
 
             if args.meccanomulti:
                     
                     action_scores,action_labels, ids = get_meccano_scores(model, loader)
             else:
                 verb_scores, noun_scores, action_scores, verb_labels, noun_labels, action_labels, ids = get_scores(model, loader, include_discarded=args.ek100)
-
 
         if args.meccanomulti:
             action_accuracies = topk_accuracy_multiple_timesteps(
@@ -622,7 +607,6 @@ def main():
 
             scores = pd.DataFrame(all_accuracies*100, columns=cc, index=pd.MultiIndex.from_tuples(indices))
 
-
         print(scores)
 
         if args.task == 'anticipation' and args.meccanomulti:
@@ -654,11 +638,10 @@ def main():
             verb_scores, noun_scores, action_scores, verb_labels, noun_labels, action_labels,_ = get_scores(model,
                                                                                                               loader)
     elif 'test' in args.mode:
-        print("TEST MODE")
         if args.ek100:
             mm = ['timestamps']
         elif args.meccanomulti:
-            mm = ['action']
+            mm = ['test']
         else:
             mm = ['seen', 'unseen']
         for m in mm:
@@ -666,39 +649,73 @@ def main():
                 loaders = [get_loader(f"test_{m}", 'rgb'), get_loader(f"test_{m}", 'flow'), get_loader(f"test_{m}", 'obj')]
                 discarded_ids = loaders[0].dataset.discarded_ids
                 verb_scores, noun_scores, action_scores, ids = get_scores_early_recognition_fusion(model, loaders)
+            
             else:
-                loader = get_loader(f"test_{m}")
-                epoch, perf, _ = load_checkpoint(model, best=True)
-
-                discarded_ids = loader.dataset.discarded_ids
-
-                print(
-                    f"Loaded checkpoint for model {type(model)}. Epoch: {epoch}. Perf: {perf:0.2f}.")
 
                 if args.meccanomulti:
-                    _, _, action_scores, ids = get_meccano_scores(model, loader)
+                    epoch, perf, _ = load_checkpoint(model, best=True)
+                    print(
+                    f"Loaded checkpoint for model {type(model)}. Epoch: {epoch}. Perf: {perf:0.2f}.")
+                    loader = get_loader(f"{m}")
+                    action_scores, action_labels, ids = get_meccano_scores(model, loader)
+
                 else:
+                    loader = get_loader(f"test_{m}")
+                    epoch, perf, _ = load_checkpoint(model, best=True)
+                    discarded_ids = loader.dataset.discarded_ids
+                    print(
+                        f"Loaded checkpoint for model {type(model)}. Epoch: {epoch}. Perf: {perf:0.2f}.")
                     verb_scores, noun_scores, action_scores, ids = get_scores(model, loader)
 
-            idx = -4 if args.task == 'anticipation' else -1
-            ids = list(ids) + list(discarded_ids)
-            verb_scores = np.concatenate((verb_scores, np.zeros((len(discarded_ids), *verb_scores.shape[1:])))) [:,idx,:]
-            noun_scores = np.concatenate((noun_scores, np.zeros((len(discarded_ids), *noun_scores.shape[1:])))) [:,idx,:]
-            action_scores = np.concatenate((action_scores, np.zeros((len(discarded_ids), *action_scores.shape[1:])))) [:,idx,:]
+            if not args.meccanomulti:
+                idx = -4 if args.task == 'anticipation' else -1
+                ids = list(ids) + list(discarded_ids)
+                verb_scores = np.concatenate((verb_scores, np.zeros((len(discarded_ids), *verb_scores.shape[1:])))) [:,idx,:]
+                noun_scores = np.concatenate((noun_scores, np.zeros((len(discarded_ids), *noun_scores.shape[1:])))) [:,idx,:]
+                action_scores = np.concatenate((action_scores, np.zeros((len(discarded_ids), *action_scores.shape[1:])))) [:,idx,:]
 
-            actions = pd.read_csv(join(args.path_to_data, 'actions.csv'))
-            # map actions to (verb, noun) pairs
-            a_to_vn = {a[1]['id']: tuple(a[1][['verb', 'noun']].values)
-                       for a in actions.iterrows()}
+                actions = pd.read_csv(join(args.path_to_data, 'actions.csv'))
+                # map actions to (verb, noun) pairs
+                a_to_vn = {a[1]['id']: tuple(a[1][['verb', 'noun']].values)
+                        for a in actions.iterrows()}
 
-            preds = predictions_to_json(verb_scores, noun_scores, action_scores, ids, a_to_vn, version = '0.2' if args.ek100 else '0.1', sls=True)
+                preds = predictions_to_json(verb_scores, noun_scores, action_scores, ids, a_to_vn, version = '0.2' if args.ek100 else '0.1', sls=True)
 
             if args.ek100:
                 with open(join(args.json_directory,exp_name+f"_test.json"), 'w') as f:
                     f.write(json.dumps(preds, indent=4, separators=(',',': ')))
+
+
+            if args.meccanomulti:
+                action_accuracies = topk_accuracy_multiple_timesteps(
+                    action_scores, action_labels)
+
+                action_recalls = topk_recall_multiple_timesteps(
+                    action_scores, action_labels, k=5)
+                
+                all_accuracies = np.concatenate(
+                    [action_accuracies,action_recalls])
+                all_accuracies = all_accuracies[[0, 1, 2]]
+                indices = [
+                    ('Action', 'Top-1 Accuracy'),
+                    ('Action', 'Top-5 Accuracy'),
+                    ('Action', 'Mean Top-5 Recall'),
+                ]
+
+                if args.task == 'anticipation':
+                    cc = np.linspace(args.alpha*args.S_ant, args.alpha, args.S_ant, dtype=str)
+                else:
+                    cc = [f"{c:0.1f}%" for c in np.linspace(0,100,args.S_ant+1)[1:]]
+
+                scores = pd.DataFrame(all_accuracies*100, columns=cc, index=pd.MultiIndex.from_tuples(indices))
+                print(scores)
+
             else:
                 with open(join(args.json_directory,exp_name+f"_{m}.json"), 'w') as f:
                     f.write(json.dumps(preds, indent=4, separators=(',',': ')))
+
+            
+
     elif 'validate_json' in args.mode:
         if args.task == 'early_recognition' and args.modality == 'fusion':
             loaders = [get_loader("validation", 'rgb'), get_loader("validation", 'flow'), get_loader("validation", 'obj')]
