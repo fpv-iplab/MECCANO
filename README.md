@@ -2,6 +2,8 @@
 
 This is the official github repository related to the MECCANO Dataset.
 
+ <h2><a href="https://github.com/fpv-iplab/MECCANO/blob/master/Challenge.md">Running ICIAP Competition with Prize!</a></h2>
+
 <div align="center">
   <img src="images/MECCANO_Multimodal.gif"/>
 </div>
