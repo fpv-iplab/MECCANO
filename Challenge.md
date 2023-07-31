@@ -1,5 +1,7 @@
 # Multimodal Action Recognition on the MECCANO Dataset ([ICIAP Competition with Prize!](https://iplab.dmi.unict.it/MECCANO/challenge.html))
 
+Submission deadline has been extended to August 07, 2023!!
+
 This is the official github repository related to the MECCANO Dataset.
 
 <div align="center">
